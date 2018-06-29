@@ -1,16 +1,24 @@
 # File name: Board.py
+#######################################################################################################
+#The Code is long, repetative and stringy but this is better than implementing it in python,
+#and the the best of my knowledge you have to keep each window in one file (multiple .kv files is okay)
+#######################################################################################################
+
+
 
 <board_setup>
     id: board_setup
     canvas.before:
+        #Makes a rectangle around the window, and fills that with the .PNG of the Chessbaord
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'Pictures\chessboard.png'
     FloatLayout:
-
+        #Size of each is 1/8 the total x and y value of the window
         size_hint: .125, .125
 
+        ####Creates all of the White Pieces
         Button:
             id: "Left White Rook"
             pos_hint: {"right": 1, 'y': 0}
@@ -59,52 +67,154 @@
             background_normal: 'Pictures\White_Queen.png'
             background_down: 'Pictures\White_Queen.png'
 
-        #ALL OF THE WHITE PAWNS:
+        ###Creates all of the White Pawns
 
         Button:
-            id: "Pawn1"
+            id: "White Pawn1"
             pos_hint: {"right": 1, 'y': 1}
             background_down: 'Pictures\white_pawn.png'
             background_normal: 'Pictures\white_pawn.png'
 
         Button:
-            id: "Pawn2"
+            id: "White Pawn2"
             pos_hint: {"right": 2, 'y': 1}
             background_down: 'Pictures\white_pawn.png'
             background_normal: 'Pictures\white_pawn.png'
 
         Button:
-            id: "Pawn3"
+            id: "White Pawn3"
             pos_hint: {"right": 3, 'y': 1}
             background_down: 'Pictures\white_pawn.png'
             background_normal: 'Pictures\white_pawn.png'
 
         Button:
-            id: "Pawn4"
+            id: "White Pawn4"
             pos_hint: {"right": 4, 'y': 1}
             background_down: 'Pictures\white_pawn.png'
             background_normal: 'Pictures\white_pawn.png'
 
         Button:
-            id: "Pawn5"
+            id: "White Pawn5"
             pos_hint: {"right": 5, 'y': 1}
             background_down: 'Pictures\white_pawn.png'
             background_normal: 'Pictures\white_pawn.png'
 
         Button:
-            id: "Pawn6"
+            id: "White Pawn6"
             pos_hint: {"right": 6, 'y': 1}
             background_down: 'Pictures\white_pawn.png'
             background_normal: 'Pictures\white_pawn.png'
 
         Button:
-            id: "Pawn7"
+            id: "White Pawn7"
             pos_hint: {"right": 7, 'y': 1}
             background_down: 'Pictures\white_pawn.png'
             background_normal: 'Pictures\white_pawn.png'
 
         Button:
-            id: "Pawn8"
+            id: "White Pawn8"
             pos_hint: {"right": 8, 'y': 1}
             background_down: 'Pictures\white_pawn.png'
             background_normal: 'Pictures\white_pawn.png'
+
+        #######################################
+        ########MOVED ONTO BLACK PIECES########
+        ######################################
+
+        Button:
+            id: "Left Black Rook"
+            pos_hint: {"right": 1, 'y': 7}
+            background_normal: 'Pictures/black_rook.png'
+            background_down: 'Pictures/black_rook.png'
+
+        Button:
+            id: "Right Black Rook"
+            pos_hint: {"right": 8, 'y': 7}
+            background_normal: 'Pictures/black_rook.png'
+            background_down: 'Pictures/black_rook.png'
+
+        Button:
+            id: "Left Black Knight"
+            pos_hint: {"right": 2, 'y': 7}
+            background_normal: 'Pictures/black_horse.png'
+            background_down: 'Pictures/black_horse.png'
+
+        Button:
+            id: "Right Black Knight"
+            pos_hint: {"right": 7, 'y': 7}
+            background_normal: 'Pictures/black_horse.png'
+            background_down: 'Pictures/black_horse.png'
+
+        Button:
+            id: "Left Black Bishop"
+            pos_hint: {"right": 3, 'y': 7}
+            background_normal: 'Pictures/black_Bishop.png'
+            background_down: 'Pictures/black_Bishop.png'
+
+        Button:
+            id: "Right Black Bishop"
+            pos_hint: {"right": 6, 'y': 7}
+            background_normal: 'Pictures/black_Bishop.png'
+            background_down: 'Pictures/black_Bishop.png'
+
+        Button:
+            id: "Black King"
+            pos_hint: {"right": 5, 'y': 7}
+            background_normal: 'Pictures/black_king.png'
+            background_down: 'Pictures/black_king.png'
+
+        Button:
+            id: "Black Queen"
+            pos_hint: {"right": 4, 'y': 7}
+            background_normal: 'Pictures/black_Queen.png'
+            background_down: 'Pictures/black_Queen.png'
+
+        ###Creates all of the Black Pawns
+
+        Button:
+            id: "Black Pawn1"
+            pos_hint: {"right": 1, 'y': 6}
+            background_down: 'Pictures/black_pawn.png'
+            background_normal: 'Pictures/black_pawn.png'
+
+        Button:
+            id: "Black Pawn2"
+            pos_hint: {"right": 2, 'y': 6}
+            background_down: 'Pictures/black_pawn.png'
+            background_normal: 'Pictures/black_pawn.png'
+
+        Button:
+            id: "Black Pawn3"
+            pos_hint: {"right": 3, 'y': 6}
+            background_down: 'Pictures/black_pawn.png'
+            background_normal: 'Pictures/black_pawn.png'
+
+        Button:
+            id: "Black Pawn4"
+            pos_hint: {"right": 4, 'y': 6}
+            background_down: 'Pictures/black_pawn.png'
+            background_normal: 'Pictures/black_pawn.png'
+
+        Button:
+            id: "Black Pawn5"
+            pos_hint: {"right": 5, 'y': 6}
+            background_down: 'Pictures/black_pawn.png'
+            background_normal: 'Pictures/black_pawn.png'
+
+        Button:
+            id: "Black Pawn6"
+            pos_hint: {"right": 6, 'y': 6}
+            background_down: 'Pictures/black_pawn.png'
+            background_normal: 'Pictures/black_pawn.png'
+
+        Button:
+            id: "Black Pawn7"
+            pos_hint: {"right": 7, 'y': 6}
+            background_down: 'Pictures/black_pawn.png'
+            background_normal: 'Pictures/black_pawn.png'
+
+        Button:
+            id: "Black Pawn8"
+            pos_hint: {"right": 8, 'y': 6}
+            background_down: 'Pictures/black_pawn.png'
+            background_normal: 'Pictures/black_pawn.png'
