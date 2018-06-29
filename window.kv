@@ -1,0 +1,110 @@
+# File name: Board.py
+
+<board_setup>
+    id: board_setup
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'Pictures\chessboard.png'
+    FloatLayout:
+
+        size_hint: .125, .125
+
+        Button:
+            id: "Left White Rook"
+            pos_hint: {"right": 1, 'y': 0}
+            background_normal: 'Pictures\white_rook.png'
+            background_down: 'Pictures\white_rook.png'
+
+        Button:
+            id: "Right White Rook"
+            pos_hint: {"right": 8, 'y': 0}
+            background_normal: 'Pictures\white_rook.png'
+            background_down: 'Pictures\white_rook.png'
+
+        Button:
+            id: "Left White Knight"
+            pos_hint: {"right": 2, 'y': 0}
+            background_normal: 'Pictures\white_horse.png'
+            background_down: 'Pictures\white_horse.png'
+
+        Button:
+            id: "Right White Knight"
+            pos_hint: {"right": 7, 'y': 0}
+            background_normal: 'Pictures\white_horse.png'
+            background_down: 'Pictures\white_horse.png'
+
+        Button:
+            id: "Left White Bishop"
+            pos_hint: {"right": 3, 'y': 0}
+            background_normal: 'Pictures\white_Bishop.png'
+            background_down: 'Pictures\white_Bishop.png'
+
+        Button:
+            id: "Right White Bishop"
+            pos_hint: {"right": 6, 'y': 0}
+            background_normal: 'Pictures\white_Bishop.png'
+            background_down: 'Pictures\white_Bishop.png'
+
+        Button:
+            id: "White King"
+            pos_hint: {"right": 5, 'y': 0}
+            background_normal: 'Pictures\white_king.png'
+            background_down: 'Pictures\white_king.png'
+
+        Button:
+            id: "White Queen"
+            pos_hint: {"right": 4, 'y': 0}
+            background_normal: 'Pictures\White_Queen.png'
+            background_down: 'Pictures\White_Queen.png'
+
+        #ALL OF THE WHITE PAWNS:
+
+        Button:
+            id: "Pawn1"
+            pos_hint: {"right": 1, 'y': 1}
+            background_down: 'Pictures\white_pawn.png'
+            background_normal: 'Pictures\white_pawn.png'
+
+        Button:
+            id: "Pawn2"
+            pos_hint: {"right": 2, 'y': 1}
+            background_down: 'Pictures\white_pawn.png'
+            background_normal: 'Pictures\white_pawn.png'
+
+        Button:
+            id: "Pawn3"
+            pos_hint: {"right": 3, 'y': 1}
+            background_down: 'Pictures\white_pawn.png'
+            background_normal: 'Pictures\white_pawn.png'
+
+        Button:
+            id: "Pawn4"
+            pos_hint: {"right": 4, 'y': 1}
+            background_down: 'Pictures\white_pawn.png'
+            background_normal: 'Pictures\white_pawn.png'
+
+        Button:
+            id: "Pawn5"
+            pos_hint: {"right": 5, 'y': 1}
+            background_down: 'Pictures\white_pawn.png'
+            background_normal: 'Pictures\white_pawn.png'
+
+        Button:
+            id: "Pawn6"
+            pos_hint: {"right": 6, 'y': 1}
+            background_down: 'Pictures\white_pawn.png'
+            background_normal: 'Pictures\white_pawn.png'
+
+        Button:
+            id: "Pawn7"
+            pos_hint: {"right": 7, 'y': 1}
+            background_down: 'Pictures\white_pawn.png'
+            background_normal: 'Pictures\white_pawn.png'
+
+        Button:
+            id: "Pawn8"
+            pos_hint: {"right": 8, 'y': 1}
+            background_down: 'Pictures\white_pawn.png'
+            background_normal: 'Pictures\white_pawn.png'

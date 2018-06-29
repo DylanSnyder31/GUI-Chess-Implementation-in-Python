@@ -8,19 +8,18 @@ from kivy.lang import Builder
 from kivy.uix.button import Button
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.image import Image
+from kivy.uix.floatlayout import FloatLayout
 
 
 
-
-class main_window(Screen):
+class board_setup(Screen):
     pass
 
 
-class filename(App):
+class window(App):
     def build(self):
-        app = App.get_running_app()
-        return main_window()
-
+        return board_setup()
 
 
 if __name__ == "__main__":
@@ -37,4 +36,6 @@ if __name__ == "__main__":
 
     #Make the top windows bar go away
     Window.borderless = True
-    filename().run()
+
+    #Runs the
+    window().run()
