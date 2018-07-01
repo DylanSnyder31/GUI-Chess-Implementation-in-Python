@@ -13,266 +13,466 @@
             source: 'Pictures\chessboard.png'
 
     FloatLayout:
+
         Scatter:
-            Button:
+
+            size_hint: None, None
+            size: 100,100
+            pos: 0,0
+
+            Label:
                 id: "Left White Rook"
-                pos: 0,0
-                background_normal: 'Pictures\white_rook.png'
-                #background_down: 'Pictures\white_rook.png'
-                #on_press: root.touched("Left White Rook")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_rook.png'
+                size: 100,100
+
         Scatter:
-            Button:
+
+            size_hint: None, None
+            size: 100,100
+            pos: 720,0
+
+            Label:
                 id: "Right White Rook"
-                pos: 720,0
-                background_normal: 'Pictures\white_rook.png'
-                #background_down: 'Pictures\white_rook.png'
-                #on_press: root.touched("Right White Rook")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_rook.png'
+                size: 100,100
+
         Scatter:
-            Button:
+
+            size_hint: None, None
+            size: 100,100
+            pos: 100,0
+
+            Label:
                 id: "Left White Knight"
-                pos: 100,0
-                background_normal: 'Pictures\white_horse.png'
-                #background_down: 'Pictures\white_horse.png'
-                #on_press: root.touched("Left White Knight")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_horse.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 600,0
+
+            Label:
                 id: "Right White Knight"
-                pos: 600,0
-                background_normal: 'Pictures\white_horse.png'
-                #background_down: 'Pictures\white_horse.png'
-                #on_press: root.touched("Right White Knight")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_horse.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 200,0
+
+            Label:
                 id: "Left White Bishop"
-                pos: 200,0
-                background_normal: 'Pictures\white_Bishop.png'
-                #background_down: 'Pictures\white_Bishop.png'
-                #on_press: root.touched("Left White Bishop")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_Bishop.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            pos: 500,0
+            size: 100,100
+
+            Label:
                 id: "Right White Bishop"
-                pos: 500,0
-                background_normal: 'Pictures\white_Bishop.png'
-                #background_down: 'Pictures\white_Bishop.png'
-                #on_press: root.touched("Right White Bishop")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_Bishop.png'
+                size: 100,100
+
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 400,0
+
+            Label:
                 id: "White King"
-                pos: 400,0
-                background_normal: 'Pictures\white_king.png'
-                #background_down: 'Pictures\white_king.png'
-                #on_press: root.touched("White King")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_king.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 300,0
+
+            Label:
                 id: "White Queen"
-                pos: 300,0
-                background_normal: 'Pictures\White_Queen.png'
-                #background_down: 'Pictures\White_Queen.png'
-                #on_press: root.touched("White Queen")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_Queen.png'
+                size: 100,100
+
             ###Creates all of the White Pawns
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 0,100
+
+            Label:
                 id: "White Pawn1"
-                pos: 0,100
-                #background_down: 'Pictures\white_pawn.png'
-                background_normal: 'Pictures\white_pawn.png'
-                #on_press: root.touched("White Pawn1")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 100,100
+
+            Label:
                 id: "White Pawn2"
-                pos: 100,100
-                #background_down: 'Pictures\white_pawn.png'
-                background_normal: 'Pictures\white_pawn.png'
-                #on_press: root.touched("White Pawn2")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 200,100
+
+
+            Label:
                 id: "White Pawn3"
-                pos: 200,100
-                #background_down: 'Pictures\white_pawn.png'
-                background_normal: 'Pictures\white_pawn.png'
-                #on_press: root.touched("White Pawn3")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 300,100
+
+            Label:
                 id: "White Pawn4"
-                pos: 300,100
-                #background_down: 'Pictures\white_pawn.png'
-                background_normal: 'Pictures\white_pawn.png'
-                #on_press: root.touched("White Pawn4")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 400,100
+
+            Label:
                 id: "White Pawn5"
-                pos: 400,100
-                #background_down: 'Pictures\white_pawn.png'
-                background_normal: 'Pictures\white_pawn.png'
-                #on_press: root.touched("White Pawn5")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 500,100
+
+            Label:
                 id: "White Pawn6"
-                pos: 500,100
-                #background_down: 'Pictures\white_pawn.png'
-                background_normal: 'Pictures\white_pawn.png'
-                #on_press: root.touched("White Pawn6")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 600,100
+
+            Label:
                 id: "White Pawn7"
-                pos: 600,100
-                #background_down: 'Pictures\white_pawn.png'
-                background_normal: 'Pictures\white_pawn.png'
-                #on_press: root.touched("White Pawn7")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 700,100
+
+            Label:
                 id: "White Pawn8"
-                pos: 700,100
-                #background_down: 'Pictures\white_pawn.png'
-                background_normal: 'Pictures\white_pawn.png'
-                #on_press: root.touched("White Pawn8")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_pawn.png'
+                size: 100,100
+
 
             #######################################
             ########MOVED ONTO BLACK PIECES########
             ######################################
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 0,700
+
+            Label:
                 id: "Left Black Rook"
-                pos: 0,700
-                background_normal: 'Pictures/black_rook.png'
-                #background_down: 'Pictures/black_rook.png'
-                #on_press: root.touched("Left Black Rook")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_rook.png'
+                size: 100,100
+
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 700,700
+
+            Label:
                 id: "Right Black Rook"
-                pos: 700,700
-                background_normal: 'Pictures/black_rook.png'
-                #background_down: 'Pictures/black_rook.png'
-                #on_press: root.touched("Right Black Rook")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_rook.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 100,700
+
+            Label:
                 id: "Left Black Knight"
-                pos: 100,700
-                background_normal: 'Pictures/black_horse.png'
-                #background_down: 'Pictures/black_horse.png'
-                #on_press: root.touched("Left Black Knight")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_horse.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos:600,700
+
+            Label:
                 id: "Right Black Knight"
-                pos:600,700
-                background_normal: 'Pictures/black_horse.png'
-                #background_down: 'Pictures/black_horse.png'
-                #on_press: root.touched("Right Black Knight")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_horse.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 200,700
+
+            Label:
                 id: "Left Black Bishop"
-                pos: 200,700
-                background_normal: 'Pictures/black_Bishop.png'
-                #background_down: 'Pictures/black_Bishop.png'
-                #on_press: root.touched("Left Black Bishop")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_Bishop.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 500,700
+
+            Label:
                 id: "Right Black Bishop"
-                pos: 500,700
-                background_normal: 'Pictures/black_Bishop.png'
-                #background_down: 'Pictures/black_Bishop.png'
-                #on_press: root.touched("Right Black Bishop")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_Bishop.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 400,700
+
+            Label:
                 id: "Black King"
-                pos: 400,700
-                background_normal: 'Pictures/black_king.png'
-                #background_down: 'Pictures/black_king.png'
-                #on_press: root.touched("Black King")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_king.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 309,700
+
+            Label:
                 id: "Black Queen"
-                pos: 309,700
-                background_normal: 'Pictures/black_Queen.png'
-                #background_down: 'Pictures/black_Queen.png'
-                #on_press: root.touched("Black Queen")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_Queen.png'
+                size: 100,100
+
 
             ###Creates all of the Black Pawns
         Scatter:
-            Button:
+            size_hint: None, None
+            pos: 0,600
+            size: 100,100
+
+            Label:
                 id: "Black Pawn1"
-                pos: 0,600
-                #background_down: 'Pictures/black_pawn.png'
-                background_normal: 'Pictures/black_pawn.png'
-                #on_press: root.touched("Black Pawn1")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_pawn.png'
+                size: 100,100
+
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+
+            pos: 100,600
+
+            Label:
                 id: "Black Pawn2"
-                pos: 100,600
-                #background_down: 'Pictures/black_pawn.png'
-                background_normal: 'Pictures/black_pawn.png'
-                #on_press: root.touched("Black Pawn2")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 200,600
+
+            Label:
                 id: "Black Pawn3"
-                pos: 200,600
-                #background_down: 'Pictures/black_pawn.png'
-                background_normal: 'Pictures/black_pawn.png'
-                #on_press: root.touched("Black Pawn3")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 300,600
+
+            Label:
                 id: "Black Pawn4"
-                pos: 300,600
-                #background_down: 'Pictures/black_pawn.png'
-                background_normal: 'Pictures/black_pawn.png'
-                #on_press: root.touched("Black Pawn4")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 400,600
+
+            Label:
                 id: "Black Pawn5"
-                pos: 400,600
-                #background_down: 'Pictures/black_pawn.png'
-                background_normal: 'Pictures/black_pawn.png'
-                #on_press: root.touched("Black Pawn5")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 500,600
+
+            Label:
                 id: "Black Pawn6"
-                pos: 500,600
-                #background_down: 'Pictures/black_pawn.png'
-                background_normal: 'Pictures/black_pawn.png'
-                #on_press: root.touched("Black Pawn6")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            pos: 600,600
+            size: 100,100
+
+            Label:
                 id: "Black Pawn7"
-                pos: 600,600
-                #background_down: 'Pictures/black_pawn.png'
-                background_normal: 'Pictures/black_pawn.png'
-                #on_press: root.touched("Black Pawn7")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_pawn.png'
+                size: 100,100
+
         Scatter:
-            Button:
+            size_hint: None, None
+            size: 100,100
+            pos: 700,600
+
+            Label:
                 id: "Black Pawn8"
-                pos: 700,600
-                #background_down: 'Pictures/black_pawn.png'
-                background_normal: 'Pictures/black_pawn.png'
-                #on_press: root.touched("Black Pawn8")
-                #on_release: root.release()
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures/black_pawn.png'
+                size: 100,100
