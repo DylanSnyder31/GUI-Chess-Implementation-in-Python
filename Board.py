@@ -5,16 +5,17 @@ from kivy.core.window import Window
 from position_of_mouse import find_position
 
 class Scatter_Text_widget(FloatLayout):
-    def on_mouse_pos(self, pos):
-        #This function gets the position of the mouse, in chessboard labels
+
+
+    def on_touch_down(self, touch):
         position = find_position()
-        pos_chess = position.chess_position(pos)
+        pos_chess = position.chess_position(touch.pos)
         print(pos_chess)
 
-
-    Window.bind(mouse_pos = on_mouse_pos)
-
-
+    def on_touch_up(self, touch):
+        position = find_position()
+        pos_chess = position.chess_position(touch.pos)
+        print(pos_chess)
 
 #Builds the App
 class window(App):
