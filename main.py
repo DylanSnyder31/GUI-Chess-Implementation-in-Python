@@ -2,7 +2,9 @@ from Board import window
 from kivy.config import Config
 from kivy.core.window import Window
 
+
 def setup():
+
     width_of_board = 820
     height_of_board = 800
 
@@ -27,7 +29,7 @@ if __name__ == "__main__":
 '''
 TODO LIST
 
-
+FIX THE SPACING OF THE BUTTONS
 
 2.5 CODE A DRAGGING SYSTEM AND A TOUCH-BASED SYSTEM
     2.75 MAKE THE DRAGGING SYSTEM HAVE THE PIECES MOVE A LAYER UP FROM THE BOARD

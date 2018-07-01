@@ -1,30 +1,17 @@
 from kivy.uix.screenmanager import Screen
 from kivy.core.window import Window
 from kivy.app import App
-
+from kivy.uix.widget import Widget
+from kivy.uix.scatter import Scatter
 from position_of_mouse import find_position
+from kivy.uix.floatlayout import FloatLayout
 
-class board_setup(Screen):
+class Scatter_Text_widget(FloatLayout):
+    pass
 
-    def on_mouse_pos(self, pos):
-        #This function gets the position of the mouse, in chessboard labels
-        position = find_position()
-        print(position.chess_position(pos))
-
-
-    def touched(self, id):
-        print(id)
-
-
-    def release(self):
-        print("RRR")
-
-
-
-    Window.bind(mouse_pos = on_mouse_pos)
 
 
 #Builds the App
 class window(App):
     def build(self):
-        return board_setup()
+        return Scatter_Text_widget()

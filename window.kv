@@ -4,8 +4,7 @@
 #and the the best of my knowledge you have to keep each window in one file (multiple .kv files is okay)
 #######################################################################################################
 
-<board_setup>
-    id: board_setup
+<Scatter_Text_widget>
     canvas.before:
         #Makes a rectangle around the window, and fills that with the .PNG of the Chessbaord
         Rectangle:
@@ -14,241 +13,266 @@
             source: 'Pictures\chessboard.png'
 
     FloatLayout:
-        #Size of each is 1/8 the total x and y value of the window
-        size_hint: .125, .125
+        Scatter:
+            Button:
+                id: "Left White Rook"
+                pos: 0,0
+                background_normal: 'Pictures\white_rook.png'
+                #background_down: 'Pictures\white_rook.png'
+                #on_press: root.touched("Left White Rook")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Right White Rook"
+                pos: 720,0
+                background_normal: 'Pictures\white_rook.png'
+                #background_down: 'Pictures\white_rook.png'
+                #on_press: root.touched("Right White Rook")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Left White Knight"
+                pos: 100,0
+                background_normal: 'Pictures\white_horse.png'
+                #background_down: 'Pictures\white_horse.png'
+                #on_press: root.touched("Left White Knight")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Right White Knight"
+                pos: 600,0
+                background_normal: 'Pictures\white_horse.png'
+                #background_down: 'Pictures\white_horse.png'
+                #on_press: root.touched("Right White Knight")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Left White Bishop"
+                pos: 200,0
+                background_normal: 'Pictures\white_Bishop.png'
+                #background_down: 'Pictures\white_Bishop.png'
+                #on_press: root.touched("Left White Bishop")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Right White Bishop"
+                pos: 500,0
+                background_normal: 'Pictures\white_Bishop.png'
+                #background_down: 'Pictures\white_Bishop.png'
+                #on_press: root.touched("Right White Bishop")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "White King"
+                pos: 400,0
+                background_normal: 'Pictures\white_king.png'
+                #background_down: 'Pictures\white_king.png'
+                #on_press: root.touched("White King")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "White Queen"
+                pos: 300,0
+                background_normal: 'Pictures\White_Queen.png'
+                #background_down: 'Pictures\White_Queen.png'
+                #on_press: root.touched("White Queen")
+                #on_release: root.release()
+            ###Creates all of the White Pawns
+        Scatter:
+            Button:
+                id: "White Pawn1"
+                pos: 0,100
+                #background_down: 'Pictures\white_pawn.png'
+                background_normal: 'Pictures\white_pawn.png'
+                #on_press: root.touched("White Pawn1")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "White Pawn2"
+                pos: 100,100
+                #background_down: 'Pictures\white_pawn.png'
+                background_normal: 'Pictures\white_pawn.png'
+                #on_press: root.touched("White Pawn2")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "White Pawn3"
+                pos: 200,100
+                #background_down: 'Pictures\white_pawn.png'
+                background_normal: 'Pictures\white_pawn.png'
+                #on_press: root.touched("White Pawn3")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "White Pawn4"
+                pos: 300,100
+                #background_down: 'Pictures\white_pawn.png'
+                background_normal: 'Pictures\white_pawn.png'
+                #on_press: root.touched("White Pawn4")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "White Pawn5"
+                pos: 400,100
+                #background_down: 'Pictures\white_pawn.png'
+                background_normal: 'Pictures\white_pawn.png'
+                #on_press: root.touched("White Pawn5")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "White Pawn6"
+                pos: 500,100
+                #background_down: 'Pictures\white_pawn.png'
+                background_normal: 'Pictures\white_pawn.png'
+                #on_press: root.touched("White Pawn6")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "White Pawn7"
+                pos: 600,100
+                #background_down: 'Pictures\white_pawn.png'
+                background_normal: 'Pictures\white_pawn.png'
+                #on_press: root.touched("White Pawn7")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "White Pawn8"
+                pos: 700,100
+                #background_down: 'Pictures\white_pawn.png'
+                background_normal: 'Pictures\white_pawn.png'
+                #on_press: root.touched("White Pawn8")
+                #on_release: root.release()
 
-        ####Creates all of the White Pieces
-        Button:
-            id: "Left White Rook"
-            pos_hint: {"right": 1, 'y': 0}
-            background_normal: 'Pictures\white_rook.png'
-            background_down: 'Pictures\white_rook.png'
-            on_press: root.touched("Left White Rook")
-            on_release: root.release()
+            #######################################
+            ########MOVED ONTO BLACK PIECES########
+            ######################################
+        Scatter:
+            Button:
+                id: "Left Black Rook"
+                pos: 0,700
+                background_normal: 'Pictures/black_rook.png'
+                #background_down: 'Pictures/black_rook.png'
+                #on_press: root.touched("Left Black Rook")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Right Black Rook"
+                pos: 700,700
+                background_normal: 'Pictures/black_rook.png'
+                #background_down: 'Pictures/black_rook.png'
+                #on_press: root.touched("Right Black Rook")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Left Black Knight"
+                pos: 100,700
+                background_normal: 'Pictures/black_horse.png'
+                #background_down: 'Pictures/black_horse.png'
+                #on_press: root.touched("Left Black Knight")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Right Black Knight"
+                pos:600,700
+                background_normal: 'Pictures/black_horse.png'
+                #background_down: 'Pictures/black_horse.png'
+                #on_press: root.touched("Right Black Knight")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Left Black Bishop"
+                pos: 200,700
+                background_normal: 'Pictures/black_Bishop.png'
+                #background_down: 'Pictures/black_Bishop.png'
+                #on_press: root.touched("Left Black Bishop")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Right Black Bishop"
+                pos: 500,700
+                background_normal: 'Pictures/black_Bishop.png'
+                #background_down: 'Pictures/black_Bishop.png'
+                #on_press: root.touched("Right Black Bishop")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Black King"
+                pos: 400,700
+                background_normal: 'Pictures/black_king.png'
+                #background_down: 'Pictures/black_king.png'
+                #on_press: root.touched("Black King")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Black Queen"
+                pos: 309,700
+                background_normal: 'Pictures/black_Queen.png'
+                #background_down: 'Pictures/black_Queen.png'
+                #on_press: root.touched("Black Queen")
+                #on_release: root.release()
 
-        Button:
-            id: "Right White Rook"
-            pos_hint: {"right": 8, 'y': 0}
-            background_normal: 'Pictures\white_rook.png'
-            background_down: 'Pictures\white_rook.png'
-            on_press: root.touched("Right White Rook")
-            on_release: root.release()
-        Button:
-            id: "Left White Knight"
-            pos_hint: {"right": 2, 'y': 0}
-            background_normal: 'Pictures\white_horse.png'
-            background_down: 'Pictures\white_horse.png'
-            on_press: root.touched("Left White Knight")
-            on_release: root.release()
-        Button:
-            id: "Right White Knight"
-            pos_hint: {"right": 7, 'y': 0}
-            background_normal: 'Pictures\white_horse.png'
-            background_down: 'Pictures\white_horse.png'
-            on_press: root.touched("Right White Knight")
-            on_release: root.release()
-        Button:
-            id: "Left White Bishop"
-            pos_hint: {"right": 3, 'y': 0}
-            background_normal: 'Pictures\white_Bishop.png'
-            background_down: 'Pictures\white_Bishop.png'
-            on_press: root.touched("Left White Bishop")
-            on_release: root.release()
-        Button:
-            id: "Right White Bishop"
-            pos_hint: {"right": 6, 'y': 0}
-            background_normal: 'Pictures\white_Bishop.png'
-            background_down: 'Pictures\white_Bishop.png'
-            on_press: root.touched("Right White Bishop")
-            on_release: root.release()
-        Button:
-            id: "White King"
-            pos_hint: {"right": 5, 'y': 0}
-            background_normal: 'Pictures\white_king.png'
-            background_down: 'Pictures\white_king.png'
-            on_press: root.touched("White King")
-            on_release: root.release()
-        Button:
-            id: "White Queen"
-            pos_hint: {"right": 4, 'y': 0}
-            background_normal: 'Pictures\White_Queen.png'
-            background_down: 'Pictures\White_Queen.png'
-            on_press: root.touched("White Queen")
-            on_release: root.release()
-        ###Creates all of the White Pawns
-
-        Button:
-            id: "White Pawn1"
-            pos_hint: {"right": 1, 'y': 1}
-            background_down: 'Pictures\white_pawn.png'
-            background_normal: 'Pictures\white_pawn.png'
-            on_press: root.touched("White Pawn1")
-            on_release: root.release()
-        Button:
-            id: "White Pawn2"
-            pos_hint: {"right": 2, 'y': 1}
-            background_down: 'Pictures\white_pawn.png'
-            background_normal: 'Pictures\white_pawn.png'
-            on_press: root.touched("White Pawn2")
-            on_release: root.release()
-        Button:
-            id: "White Pawn3"
-            pos_hint: {"right": 3, 'y': 1}
-            background_down: 'Pictures\white_pawn.png'
-            background_normal: 'Pictures\white_pawn.png'
-            on_press: root.touched("White Pawn3")
-            on_release: root.release()
-        Button:
-            id: "White Pawn4"
-            pos_hint: {"right": 4, 'y': 1}
-            background_down: 'Pictures\white_pawn.png'
-            background_normal: 'Pictures\white_pawn.png'
-            on_press: root.touched("White Pawn4")
-            on_release: root.release()
-        Button:
-            id: "White Pawn5"
-            pos_hint: {"right": 5, 'y': 1}
-            background_down: 'Pictures\white_pawn.png'
-            background_normal: 'Pictures\white_pawn.png'
-            on_press: root.touched("White Pawn5")
-            on_release: root.release()
-        Button:
-            id: "White Pawn6"
-            pos_hint: {"right": 6, 'y': 1}
-            background_down: 'Pictures\white_pawn.png'
-            background_normal: 'Pictures\white_pawn.png'
-            on_press: root.touched("White Pawn6")
-            on_release: root.release()
-        Button:
-            id: "White Pawn7"
-            pos_hint: {"right": 7, 'y': 1}
-            background_down: 'Pictures\white_pawn.png'
-            background_normal: 'Pictures\white_pawn.png'
-            on_press: root.touched("White Pawn7")
-            on_release: root.release()
-        Button:
-            id: "White Pawn8"
-            pos_hint: {"right": 8, 'y': 1}
-            background_down: 'Pictures\white_pawn.png'
-            background_normal: 'Pictures\white_pawn.png'
-            on_press: root.touched("White Pawn8")
-            on_release: root.release()
-        #######################################
-        ########MOVED ONTO BLACK PIECES########
-        ######################################
-
-        Button:
-            id: "Left Black Rook"
-            pos_hint: {"right": 1, 'y': 7}
-            background_normal: 'Pictures/black_rook.png'
-            background_down: 'Pictures/black_rook.png'
-            on_press: root.touched("Left Black Rook")
-            on_release: root.release()
-        Button:
-            id: "Right Black Rook"
-            pos_hint: {"right": 8, 'y': 7}
-            background_normal: 'Pictures/black_rook.png'
-            background_down: 'Pictures/black_rook.png'
-            on_press: root.touched("Right Black Rook")
-            on_release: root.release()
-        Button:
-            id: "Left Black Knight"
-            pos_hint: {"right": 2, 'y': 7}
-            background_normal: 'Pictures/black_horse.png'
-            background_down: 'Pictures/black_horse.png'
-            on_press: root.touched("Left Black Knight")
-            on_release: root.release()
-        Button:
-            id: "Right Black Knight"
-            pos_hint: {"right": 7, 'y': 7}
-            background_normal: 'Pictures/black_horse.png'
-            background_down: 'Pictures/black_horse.png'
-            on_press: root.touched("Right Black Knight")
-            on_release: root.release()
-        Button:
-            id: "Left Black Bishop"
-            pos_hint: {"right": 3, 'y': 7}
-            background_normal: 'Pictures/black_Bishop.png'
-            background_down: 'Pictures/black_Bishop.png'
-            on_press: root.touched("Left Black Bishop")
-            on_release: root.release()
-        Button:
-            id: "Right Black Bishop"
-            pos_hint: {"right": 6, 'y': 7}
-            background_normal: 'Pictures/black_Bishop.png'
-            background_down: 'Pictures/black_Bishop.png'
-            on_press: root.touched("Right Black Bishop")
-            on_release: root.release()
-        Button:
-            id: "Black King"
-            pos_hint: {"right": 5, 'y': 7}
-            background_normal: 'Pictures/black_king.png'
-            background_down: 'Pictures/black_king.png'
-            on_press: root.touched("Black King")
-            on_release: root.release()
-        Button:
-            id: "Black Queen"
-            pos_hint: {"right": 4, 'y': 7}
-            background_normal: 'Pictures/black_Queen.png'
-            background_down: 'Pictures/black_Queen.png'
-            on_press: root.touched("Black Queen")
-            on_release: root.release()
-
-        ###Creates all of the Black Pawns
-
-        Button:
-            id: "Black Pawn1"
-            pos_hint: {"right": 1, 'y': 6}
-            background_down: 'Pictures/black_pawn.png'
-            background_normal: 'Pictures/black_pawn.png'
-            on_press: root.touched("Black Pawn1")
-            on_release: root.release()
-        Button:
-            id: "Black Pawn2"
-            pos_hint: {"right": 2, 'y': 6}
-            background_down: 'Pictures/black_pawn.png'
-            background_normal: 'Pictures/black_pawn.png'
-            on_press: root.touched("Black Pawn2")
-            on_release: root.release()
-        Button:
-            id: "Black Pawn3"
-            pos_hint: {"right": 3, 'y': 6}
-            background_down: 'Pictures/black_pawn.png'
-            background_normal: 'Pictures/black_pawn.png'
-            on_press: root.touched("Black Pawn3")
-            on_release: root.release()
-        Button:
-            id: "Black Pawn4"
-            pos_hint: {"right": 4, 'y': 6}
-            background_down: 'Pictures/black_pawn.png'
-            background_normal: 'Pictures/black_pawn.png'
-            on_press: root.touched("Black Pawn4")
-            on_release: root.release()
-        Button:
-            id: "Black Pawn5"
-            pos_hint: {"right": 5, 'y': 6}
-            background_down: 'Pictures/black_pawn.png'
-            background_normal: 'Pictures/black_pawn.png'
-            on_press: root.touched("Black Pawn5")
-            on_release: root.release()
-        Button:
-            id: "Black Pawn6"
-            pos_hint: {"right": 6, 'y': 6}
-            background_down: 'Pictures/black_pawn.png'
-            background_normal: 'Pictures/black_pawn.png'
-            on_press: root.touched("Black Pawn6")
-            on_release: root.release()
-        Button:
-            id: "Black Pawn7"
-            pos_hint: {"right": 7, 'y': 6}
-            background_down: 'Pictures/black_pawn.png'
-            background_normal: 'Pictures/black_pawn.png'
-            on_press: root.touched("Black Pawn7")
-            on_release: root.release()
-        Button:
-            id: "Black Pawn8"
-            pos_hint: {"right": 8, 'y': 6}
-            background_down: 'Pictures/black_pawn.png'
-            background_normal: 'Pictures/black_pawn.png'
-            on_press: root.touched("Black Pawn8")
-            on_release: root.release()
+            ###Creates all of the Black Pawns
+        Scatter:
+            Button:
+                id: "Black Pawn1"
+                pos: 0,600
+                #background_down: 'Pictures/black_pawn.png'
+                background_normal: 'Pictures/black_pawn.png'
+                #on_press: root.touched("Black Pawn1")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Black Pawn2"
+                pos: 100,600
+                #background_down: 'Pictures/black_pawn.png'
+                background_normal: 'Pictures/black_pawn.png'
+                #on_press: root.touched("Black Pawn2")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Black Pawn3"
+                pos: 200,600
+                #background_down: 'Pictures/black_pawn.png'
+                background_normal: 'Pictures/black_pawn.png'
+                #on_press: root.touched("Black Pawn3")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Black Pawn4"
+                pos: 300,600
+                #background_down: 'Pictures/black_pawn.png'
+                background_normal: 'Pictures/black_pawn.png'
+                #on_press: root.touched("Black Pawn4")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Black Pawn5"
+                pos: 400,600
+                #background_down: 'Pictures/black_pawn.png'
+                background_normal: 'Pictures/black_pawn.png'
+                #on_press: root.touched("Black Pawn5")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Black Pawn6"
+                pos: 500,600
+                #background_down: 'Pictures/black_pawn.png'
+                background_normal: 'Pictures/black_pawn.png'
+                #on_press: root.touched("Black Pawn6")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Black Pawn7"
+                pos: 600,600
+                #background_down: 'Pictures/black_pawn.png'
+                background_normal: 'Pictures/black_pawn.png'
+                #on_press: root.touched("Black Pawn7")
+                #on_release: root.release()
+        Scatter:
+            Button:
+                id: "Black Pawn8"
+                pos: 700,600
+                #background_down: 'Pictures/black_pawn.png'
+                background_normal: 'Pictures/black_pawn.png'
+                #on_press: root.touched("Black Pawn8")
+                #on_release: root.release()
