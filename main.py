@@ -19,37 +19,12 @@ def setup():
     #Make the top windows bar go away
     Window.borderless = True
 
+    #Disable the Multi-Touch
+    Config.set('input', 'mouse', 'mouse,disable_multitouch')
+    
     #Runs the
     window().run()
 
 
 if __name__ == "__main__":
     setup()
-
-'''
-TODO LIST
-
-
-MAKE THE DICTIONARY UPDATE
-
-
-MAKE THE LABELS DISSAPEAR WHEN CAPTURED
-
-
-
-
-
-
-
-
-
-    2.75 MAKE THE DRAGGING SYSTEM HAVE THE PIECES MOVE A LAYER UP FROM THE BOARD - AND GET IN SYNC WITH MOUSE
-3. CODE ALL OF THE MOVES FOR THE PIECES (HARD; MAKE CODE STILL NEAT)
-4. CREATE A SYSTEM OF TURN-BASED GAMEPLAY (MEDIUM; NEED TO KEEP CODE CLEAN)
-5. CREATE A SYSTEM TO SHOW THE USER WHERE TO PLACE: AND A CHECK-BASED SYSTEM
-6. CREATE A SYSTEM FOR KILLING OTHER PIECES
-
-DONE;
-THE GAMEPLAY SHOULD BE BASICALLY DONE
-
-'''
