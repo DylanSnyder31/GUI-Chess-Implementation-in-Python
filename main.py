@@ -4,7 +4,7 @@ from kivy.core.window import Window
 
 
 def setup():
-
+    #Set the Height and Width of the Board
     width_of_board = 820
     height_of_board = 800
 
@@ -21,7 +21,7 @@ def setup():
 
     #Disable the Multi-Touch
     Config.set('input', 'mouse', 'mouse,disable_multitouch')
-    
+
     #Runs the
     window().run()
 

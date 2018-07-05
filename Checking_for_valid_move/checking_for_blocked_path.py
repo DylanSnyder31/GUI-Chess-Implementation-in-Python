@@ -1,294 +1,252 @@
 from Data_Conversion.position_of_pieces import position_dic
 from Data_Conversion.difference_for_letter import dictionar_of_letters_to_numbers
 
+'''
+This file is to make sure the path is clear for the pieces to move.
+This file only includes the Rook and the Bishop
+    A. The knight isn't here because it is allowed to jump over other pieces
+    B. The King isn't here because it can only move on sqaure (unless castling)
+    C. The pawn isn't here for the same reason as the king, it can only move one square
+    D. THe Queen isn't here because it will steal the code for the Bishop and Rook
+'''
+
 class is_path_blocked():
 
     class path_rook():
         '''
-        SIDEWAYS
+        This class is specific to the Rook, and has two functions,
+        number_same is used when the rook is played to the left or right
+        letter_same is used when the rook is played up or down
         '''
+        def __init__(self, position_piece, pos_chess):
+            #Initializes commonly used variable in the two functions
+            self.number_that_stayed_the_same = str(pos_chess)[1]
+
+            #These are numeric representations of the letters on the chess coordinates
+            self.letter_number_of_start = dictionar_of_letters_to_numbers[str(pos_chess)[0]]
+            self.letter_number_of_end =  dictionar_of_letters_to_numbers[str(position_piece)[0]]
+
+            self.letter_that_stayed_the_same = str(pos_chess)[0]
+            self.number_of_start = str(pos_chess)[1]
+            self.number_of_end =  int(str(position_piece)[1])
+
+            self.blocked = "No"
+
         def number_same(self, position_piece, pos_chess):
+
             if dictionar_of_letters_to_numbers[str(pos_chess)[0]] -  dictionar_of_letters_to_numbers[str(position_piece)[0]] >= 1:
-                '''
-                To the Right
-                '''
-                number_that_stayed_the_same = str(pos_chess)[1]
+                #This is for when the Rook is moved to the right
 
-                number_of_start = dictionar_of_letters_to_numbers[str(pos_chess)[0]]
-                number_of_end =  dictionar_of_letters_to_numbers[str(position_piece)[0]] + 1
-
-
-                blocked = "No"
-                while number_of_end != number_of_start:
+                self.letter_number_of_end += 1
+                #Loops through every square the rook went past
+                while self.letter_number_of_end != self.letter_number_of_start:
                     for key, value in dictionar_of_letters_to_numbers.items():
-                        if value == number_of_end:
+                        if value == self.letter_number_of_end:
                             new_number = key
 
-                    new_number = str(str(new_number)[0]) + str(number_that_stayed_the_same)
-                    print(position_dic[str(new_number)])
-                    if position_dic[str(new_number)] == "None":
-                        pass
+                    #New_number is a square the Rook went over to get to it's finishing point
+                    new_number = str(str(new_number)[0]) + str(self.number_that_stayed_the_same)
 
-                    else:
-                        blocked = "Yes"
+                    #Checks to make sure the square is empty
+                    if position_dic[str(new_number)] != "None":
+                        #If it is not empty then blocked will equal "Yes" to make sure that the move will get flagged as FALSE
+                        self.blocked = "Yes"
 
-
-                    number_of_end += 1
-
-                if blocked == "Yes":
-                    return "False"
-
-                else:
-                    return "True"
-
+                    #Iterates through the loop
+                    self.letter_number_of_end += 1
 
             elif dictionar_of_letters_to_numbers[str(pos_chess)[0]] -  dictionar_of_letters_to_numbers[str(position_piece)[0]] < 0:
-                '''
-                Going to the Left
-                '''
+                #This is for when the Rook is moved to the left (almost the same code, but has some key differences)
 
-                number_that_stayed_the_same = str(pos_chess)[1]
-
-                number_of_start = dictionar_of_letters_to_numbers[str(pos_chess)[0]] + 1
-                number_of_end =  dictionar_of_letters_to_numbers[str(position_piece)[0]]
-
-
-                blocked = "No"
-                while number_of_start != number_of_end:
+                self.letter_number_of_start += 1
+                #Loops through each square
+                while self.letter_number_of_start != self.letter_number_of_end:
                     for key, value in dictionar_of_letters_to_numbers.items():
-                        if value == number_of_start:
+                        if value == self.letter_number_of_start:
+                            #Determines the square that the rook went past
                             new_number = key
+                    new_number = str(str(new_number)[0]) + str(self.number_that_stayed_the_same)
 
-                    new_number = str(str(new_number)[0]) + str(number_that_stayed_the_same)
+                    #Checks to see if that square is empty
+                    if position_dic[str(new_number)] != "None":
+                        #If not, the move is not valid
+                        self.blocked = "Yes"
 
-                    if position_dic[str(new_number)] == "None":
-                        pass
-                    else:
-                        blocked = "Yes"
+                    #Iterates the loop, checking every square the rook went past
+                    self.letter_number_of_start += 1
 
-
-                    number_of_start += 1
-
-                if blocked == "Yes":
-                    return "False"
-
-                else:
-                    return "True"
-
-
-
-
+            #Checks to see if the move was valid
+            if self.blocked == "No":
+                return "True"
 
 
         def letter_same(self, position_piece, pos_chess):
 
             if int(str(pos_chess)[1]) - int(str(position_piece)[1]) >= 1:
-                '''
-                GO UP
-                '''
-                letter_that_stayed_the_same = str(pos_chess)[0]
+                #This is for when the rook gets moved up
 
-                number_of_start = str(pos_chess)[1]
-                number_of_end =  int(str(position_piece)[1]) + 1
+                self.number_of_end += 1
+                #Iterates through the squares
+                while str(self.number_of_end) != str(self.number_of_start):
+                    new_number = self.number_of_end
+                    new_number = str(self.letter_that_stayed_the_same) + str(new_number)
 
+                    #Checks the see if the square is occupied
+                    if position_dic[str(new_number)] != "None":
+                        #If it is occupied, then the move is NOT valid
+                        self.blocked = "Yes"
 
-                blocked = "No"
-
-                while str(number_of_end) != str(number_of_start):
-
-                    new_number = number_of_end
-                    new_number = str(letter_that_stayed_the_same) + str(new_number)
-
-                    if position_dic[str(new_number)] == "None":
-                        pass
-                    else:
-                        blocked = "Yes"
-
-
-                    number_of_end += 1
-
-                if blocked == "Yes":
-                    return "False"
-
-                else:
-                    return "True"
+                    #Continues the Loop
+                    self.number_of_end += 1
 
             elif int(str(pos_chess)[1]) - int(str(position_piece)[1]) < 0:
-                '''
-                GO UP
-                '''
-                letter_that_stayed_the_same = str(pos_chess)[0]
+                #This is used when the rook gets moved down
 
-                number_of_start = int(str(pos_chess)[1]) + 1
-                number_of_end =  str(position_piece)[1]
+                self.number_of_start += 1
+                #Iterates through the squares
+                while str(self.number_of_start) != str(number_of_end):
 
+                    #Assignes new_number to a square the rook went past
+                    new_number = self.number_of_start
+                    new_number = str(self.letter_that_stayed_the_same) + str(new_number)
 
-                blocked = "No"
+                    #Checks to see if the square is occupied
+                    if position_dic[str(new_number)] != "None":
+                        #If it is, the move is NOT valid
+                        self.blocked = "Yes"
 
-                while str(number_of_start) != str(number_of_end):
+                    #Continues the loop
+                    self.number_of_start += 1
 
-                    new_number = number_of_start
-                    new_number = str(letter_that_stayed_the_same) + str(new_number)
-
-                    if position_dic[str(new_number)] == "None":
-                        pass
-                    else:
-                        blocked = "Yes"
-
-
-                    number_of_start += 1
-
-                if blocked == "Yes":
-                    return "False"
-
-                else:
-                    return "True"
-
-            return "True"
-
+            #Checks the final verdict of the move, if it is valid or not
+            if self.blocked == "No":
+                return "True"
 
     class path_bishop():
-        def recurse(self, position_piece, pos_chess, difference_of_number, first_letter, second_letter):
+        '''
+        This class is specific to the Bishop, to check it's unique way of moving accross the baord
+        There is one function, but four main IF statements to determine if the move went
+        down to the right/left or up to the right/left
+        '''
+        def __init__(self, pos_chess, position_piece, piece_that_moved):
+            #Initializes variables that will be used frequently
+            self.blocked = "No"
+            self.piece_that_moved = piece_that_moved
+            self.number_pos = int(str(pos_chess)[1])
+            self.number_position = int(str(position_piece)[1])
+            self.first = True
+
+        def recurse(self, difference_of_number, first_letter, second_letter):
+
             if difference_of_number >= 1:
                 '''
-                Going Down
+                When the Bishop gets moved down
                 '''
                 if first_letter - second_letter >= 1:
+                    '''
+                    When the Bishop Gets moved to the left'''
 
-                    '''
-                    To the Left
-                    '''
-                    #second_letter += 1
-                    blocked = "No"
-                    number = int(str(pos_chess)[1])
-                    first = True
+                    #This loop is to check each square the Bishop passed By
                     while second_letter != first_letter:
-
                         for key, value in dictionar_of_letters_to_numbers.items():
                             if value == second_letter:
                                 new_number = key
 
+                        #This is the corrdinate of a square that the Bishop went passed
+                        new_number = str(str(new_number) + str(self.number_pos))
 
-                        new_number = str(str(new_number) + str(number))
+                        #Checks the square to determine
+                        if position_dic[str(new_number)] != "None":
+                            if self.first != True:
+                                self.blocked = "Yes"
 
-                        if position_dic[str(new_number)] == "None" or first == True:
-                            pass
-                        else:
-                            blocked = "Yes"
-
-
+                        #Changes values to iterate through loops
                         second_letter += 1
-                        number += 1
-
-                        first = False
-                    if blocked == "Yes":
-                        return "False"
-
-                    else:
-                        return "True"
+                        self.number_pos += 1
+                        self.first = False
 
                 elif first_letter - second_letter < 0:
                     '''
-                    To the Right
-                    '''
+                    When the Bishop Gets moved to the Right'''
 
-                    blocked = "No"
-                    number = int(str(position_piece)[1])
-
-                    first = True
+                    #Loop to check each square the Bishop passed by
                     while first_letter != second_letter:
-
                         for key, value in dictionar_of_letters_to_numbers.items():
                             if value == first_letter:
                                 new_number = key
 
+                        #Updates variable with the sqaure corrdinate
+                        new_number = str(str(new_number) + str(self.number_position ))
 
-                        new_number = str(str(new_number) + str(number))
+                        #Checks to make sure the corrdinate is empty
+                        if position_dic[str(new_number)] != "None":
+                            if self.first != True:
+                                self.blocked = "Yes"
 
-                        if position_dic[str(new_number)] == "None" or first == True:
-                            pass
-                        else:
-                            blocked = "Yes"
-
-
+                        #Updates Values
                         first_letter += 1
-                        number -= 1
-                        first = False
-                    if blocked == "Yes":
-                        return "False"
+                        self.number_position -= 1
+                        self.first = False
 
-                    else:
-                        return "True"
-            #################################################################################################################################
-            ###```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````###
-            #################################################################################################################################
+                #Checks to see if the move was valid
+                if self.blocked == "No":
+                    return "True"
+
+
             elif difference_of_number < 0:
                 '''
-                Going Up
+                When the Bishop Gets moved up
                 '''
                 if first_letter - second_letter >= 1:
-
                     '''
-                    To the Left
-                    '''
+                    When the Bishop gets moved to the left'''
 
-                    #second_letter += 1
-                    blocked = "No"
-                    number = int(str(pos_chess)[1])
-                    first = True
                     while second_letter != first_letter:
 
+                        #Checks each square
                         for key, value in dictionar_of_letters_to_numbers.items():
                             if value == second_letter:
                                 new_number = key
 
+                        #Assigns vararable to the square the Bishop passed by
+                        new_number = str(str(new_number) + str(self.number_pos))
 
-                        new_number = str(str(new_number) + str(number))
-                        if position_dic[str(new_number)] == "None" or first == True:
-                            pass
-                        else:
-                            blocked = "Yes"
+                        #Checks to see if the square is empty
+                        if position_dic[str(new_number)] != "None":
+                            if self.first != True:
+                                self.blocked = "Yes"
 
 
+                        #Iterates through Loops
                         second_letter += 1
-                        number -= 1
+                        self.number_pos -= 1
+                        self.first = False
 
-                        first = False
-                    if blocked == "Yes":
-                        return "False"
-
-                    else:
-                        return "True"
 
                 elif first_letter - second_letter < 0:
                     '''
-                    To the Right
-                    '''
+                    When the Bishop gets moved to the right'''
 
-                    blocked = "No"
-                    number = int(str(position_piece)[1])
-
-                    first = True
                     while first_letter != second_letter:
 
+                        #Checks each square
                         for key, value in dictionar_of_letters_to_numbers.items():
                             if value == first_letter:
                                 new_number = key
 
+                        #Updates variable with an appropriate square
+                        new_number = str(str(new_number) + str(self.number_position))
 
-                        new_number = str(str(new_number) + str(number))
+                        #Checks to see if that square was empty
+                        if position_dic[str(new_number)] != "None":
+                            if self.first != True:
+                                self.blocked = "Yes"
 
-                        if position_dic[str(new_number)] == "None" or first == True:
-                            pass
-                        else:
-                            blocked = "Yes"
-
-
+                        #Iterates through loops by changing variable values
                         first_letter += 1
-                        number += 1
-                        first = False
-                    if blocked == "Yes":
-                        return "False"
+                        self.number_position += 1
+                        self.first = False
 
-                    else:
-                        return "True"
+                #Checks to see if the whole move was valid
+                if self.blocked == "No":
+                    return "True"

@@ -2,18 +2,20 @@ from kivy.app import App
 from kivy.uix.screenmanager import Screen
 
 from Data_Conversion.position_of_mouse import find_position
-from Data_Conversion.position_of_pieces import teams_turn
 from Data_Conversion.position_of_pieces import position_dic
-
 from Data_Conversion.chess_coords_to_real_coords import convert_coordinates
+
 from valid_move import is_valid_move
 
 class Scatter_Text_widget(Screen):
+
 
     def __init__(self, **kwargs):
         #Initializes the class with variables
         super(Scatter_Text_widget, self).__init__(**kwargs)
 
+        self.position = find_position()
+        self.position_piece = position_dic
     def on_touch_down(self, touch):
         #This function gets called when the mouse is pressed
 
@@ -21,15 +23,13 @@ class Scatter_Text_widget(Screen):
         #This makes sure the labels keep their Scatter Property and the mouse input can be obtained
 
         if res:
-            position_piece = position_dic
-            position = find_position()
 
             #Gets the chess coord of where the mouse pressed
-            pos_chess = position.chess_position(touch.pos)
+            pos_chess = self.position.chess_position(touch.pos)
 
             #Saves the input to a text file
             #Probably a bad way to do this, especially for security concerns
-            clicked_input = [pos_chess,position_piece[str(pos_chess)]]
+            clicked_input = [pos_chess,self.position_piece[str(pos_chess)]]
 
             #Writes twrites the input into the file
             with open('Data_Conversion\saved_input.txt', 'w') as f:
@@ -41,12 +41,10 @@ class Scatter_Text_widget(Screen):
         res = super(Scatter_Text_widget, self).on_touch_up(touch)
         #Makes sure Scatter properties and touch input work alligned
         if res:
-            position = find_position()
-            position_piece = position_dic
             conversion = convert_coordinates
 
             #Gets the position of the mouse, and translates it into a chess corrd
-            pos_chess = position.chess_position(touch.pos)
+            pos_chess = self.position.chess_position(touch.pos)
 
             #opens the text file, to get the previous data
             with open('Data_Conversion\saved_input.txt', 'r') as f:
@@ -67,7 +65,7 @@ class Scatter_Text_widget(Screen):
             Checks with another python file to see if the move was valid or not, against all rules of Chess
             '''
             st = is_valid_move()
-            valid_or_not = st.main(chess_position_numerical, position_piece, pos_chess, piece_that_moved)
+            valid_or_not = st.main(chess_position_numerical, self.position_piece, pos_chess, piece_that_moved)
 
             #IF THE MOVE WAS VALID
             if valid_or_not == "True":
@@ -80,7 +78,7 @@ class Scatter_Text_widget(Screen):
 
             elif valid_or_not == "True, Captured":
                 #If the move was valid, and a capture occured
-                piece_occupied = str(position_piece[pos_chess])
+                piece_occupied = str(self.position_piece[pos_chess])
 
                 #Deletes the piece that was captured
                 self.ids[piece_occupied].pos = (1000,1000)
