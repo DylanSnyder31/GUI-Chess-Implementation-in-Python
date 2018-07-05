@@ -1,0 +1,15 @@
+# File name: pawn.py
+
+<new_piece>
+
+    FloatLayout:
+
+        Label:
+            pos, 0,0
+            size_hint: None, None
+            size: 100,100
+            text: "YESMAN"
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size

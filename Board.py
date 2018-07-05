@@ -89,6 +89,31 @@ class Scatter_Text_widget(Screen):
                 position_dic[str(chess_position_numerical)] = 'None'
                 position_dic[str(pos_chess)] = str(piece_that_moved)
 
+            elif valid_or_not == "Castle":
+                #Move the piece to the location
+                self.ids[piece_that_moved].pos = (conversion.to_number()[pos_chess][0], conversion.to_number()[pos_chess][1])
+                if str(pos_chess) == 'g1':
+                    self.ids['Right White Rook'].pos = (conversion.to_number()['f1'][0], conversion.to_number()['f1'][1])
+                    position_dic['h1'] = 'None'
+                    position_dic['f1'] = 'Right White Rook'
+                if str(pos_chess) == 'c1':
+                    self.ids['Left White Rook'].pos = (conversion.to_number()['d1'][0], conversion.to_number()['d1'][1])
+                    position_dic['a1'] = 'None'
+                    position_dic['d1'] = 'Left White Rook'
+                if str(pos_chess) == 'g8':
+                    self.ids['Right Black Rook'].pos = (conversion.to_number()['f8'][0], conversion.to_number()['f8'][1])
+                    position_dic['h8'] = 'None'
+                    position_dic['f8'] = 'Right Black Rook'
+                if str(pos_chess) == 'c8':
+                    self.ids['Left Black Rook'].pos = (conversion.to_number()['d8'][0], conversion.to_number()['d8'][1])
+                    position_dic['a8'] = 'None'
+                    position_dic['d8'] = 'Left Black Rook'
+                #Updates the Dictionary of all the piece locations
+                position_dic[str(chess_position_numerical)] = 'None'
+                position_dic[str(pos_chess)] = str(piece_that_moved)
+
+            elif valid_or_not == "New_Piece":
+                pass
             else:
                 #If the move was not valid
 

@@ -1,6 +1,7 @@
 from Data_Conversion.difference_for_letter import dictionar_of_letters_to_numbers
 from Data_Conversion.position_of_pieces import position_dic
 
+
 '''
 Since the rules of the pawn movement and the movement of capturing is so different, I
 decided to make two different functions that get called depending if a capturing is happeing
@@ -31,6 +32,7 @@ class pawn_movement():
                 return "Capture"
 
     def pawn(self, position_piece, pos_chess):
+        
         '''
         The rules I used to determine the movement of the pawn, when regular are as follows:
 

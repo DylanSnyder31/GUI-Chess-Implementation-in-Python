@@ -27,7 +27,7 @@ class is_path_blocked():
             self.letter_number_of_end =  dictionar_of_letters_to_numbers[str(position_piece)[0]]
 
             self.letter_that_stayed_the_same = str(pos_chess)[0]
-            self.number_of_start = str(pos_chess)[1]
+            self.number_of_start = int(str(pos_chess)[1])
             self.number_of_end =  int(str(position_piece)[1])
 
             self.blocked = "No"
@@ -104,7 +104,7 @@ class is_path_blocked():
 
                 self.number_of_start += 1
                 #Iterates through the squares
-                while str(self.number_of_start) != str(number_of_end):
+                while str(self.number_of_start) != str(self.number_of_end):
 
                     #Assignes new_number to a square the rook went past
                     new_number = self.number_of_start
