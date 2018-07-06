@@ -1,3 +1,8 @@
+'''
+The purpose of this is so when the user places a piece, it goes into the middle of the square, not in the
+exact location where the user places it.
+'''
+
 class convert_coordinates():
     def to_number():
         convert_coordinates = {'a1': (0,0), 'b1': (102.5,0), 'c1': (205,0), 'd1': (307.5,0), 'e1': (410,0), 'f1': (512.5,0), 'g1': (615,0), 'h1': (717.5,0),
@@ -9,5 +14,5 @@ class convert_coordinates():
                                 'a7': (0,600), 'b7': (102.5,600), 'c7': (205,600), 'd7': (307.5,600), 'e7': (410,600), 'f7': (512.5,600), 'g7': (615,600), 'h7': (717.5,600),
                                 'a8': (0,700), 'b8': (102.5,700), 'c8': (205,700), 'd8': (307.5,700), 'e8': (410,700), 'f8': (512.5,700), 'g8': (615,700), 'h8': (717.5,700)
         }
-        
+
         return convert_coordinates

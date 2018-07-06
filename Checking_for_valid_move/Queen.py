@@ -1,4 +1,3 @@
-
 from Checking_for_valid_move.rook import rook
 from Checking_for_valid_move.bishop import Bishop
 

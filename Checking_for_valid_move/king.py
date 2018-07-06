@@ -1,5 +1,6 @@
 from Data_Conversion.difference_for_letter import dictionar_of_letters_to_numbers
 from Data_Conversion.position_of_pieces import position_dic
+
 def King(position_piece, pos_chess):
     '''
     The rules I used to determine the path of the king:

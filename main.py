@@ -16,7 +16,7 @@ def setup():
     Config.set('graphics', 'resizable', '0')
     Config.write()
 
-    #Make the top windows bar go away
+    #Make the top Windows bar go away
     Window.borderless = True
 
     #Disable the Multi-Touch
