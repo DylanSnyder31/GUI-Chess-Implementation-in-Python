@@ -23,6 +23,11 @@ $ sudo apt-get install python3-kivy
 
 ## How to Run
 
+Clone: 
+```
+git clone https://github.com/DylanSnyder31/Machine-Learning-Chess.git
+```
+
 Run:
 ```
 python3 main.py
