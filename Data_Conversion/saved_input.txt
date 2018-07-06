@@ -1,1 +1,1 @@
-['a7', 'Black Pawn1']
+['d7', 'Whire Queen']

@@ -14,40 +14,66 @@
             source: 'Pictures\chessboard.png'
     FloatLayout:
 
-        Button:
-            id: Knight Change
+        Scatter:
+            id: Whire Queen
             size_hint: None, None
-            pos: 0,400
             size: 100,100
+            pos: 1000,10000
 
-            background_normal: 'Pictures\white_horse.png'
-            background_down: 'Pictures\white_horse.png'
-        Button:
-            id: Rook Change
+            Label:
+
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_Queen.png'
+                size: 100,100
+
+        Scatter:
+            id: Ledt White Rook
             size_hint: None, None
-            pos: 0,300
             size: 100,100
+            pos: 1000,1000
 
-            background_down: 'Pictures\white_rook.png'
-            background_normal: 'Pictures\white_rook.png'
-        Button:
-            id: Bishop Change
+            Label:
+
+                canvas.before:
+                    Rectangle:
+
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_rook.png'
+                size: 100,100
+
+        Scatter:
+            id: Ledt White Knight
             size_hint: None, None
-            pos: 0,600
             size: 100,100
+            pos: 1000,10000
 
+            Label:
 
-            background_normal: 'Pictures\white_Bishop.png'
-            background_down: 'Pictures\white_Bishop.png'
-        Button:
-            id: Queen Change
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_horse.png'
+                size: 100,100
+
+        Scatter:
+            id: Ledt White Bishop
             size_hint: None, None
-            pos: 0, 500
             size: 100,100
+            pos: 1000,10000
 
-            background_down: 'Pictures\white_Queen.png'
-            background_normal: 'Pictures\white_Queen.png'
+            Label:
 
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'Pictures\white_Bishop.png'
+                size: 100,100
 
         Scatter:
             id: Left White Rook

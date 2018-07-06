@@ -56,7 +56,14 @@ class is_valid_move():
                         return "New_Piece"
                 else:
                     if str(pos_chess) == "a1" or str(pos_chess) == "b1" or str(pos_chess) == "c1" or str(pos_chess) == "d1" or str(pos_chess) == "e1" or str(pos_chess) == "f1" or str(pos_chess) == "g1" or str(pos_chess) == "h1":
-                        return "New_Piece"
+                        if move_turn(piece_that_moved, teams_turn) == "True":
+                            #if king_check.in_check() == "True":
+
+                            if teams_turn == "W":
+                                teams_turn = "B"
+                            else:
+                                teams_turn ="W"
+                            return "New_Piece"
 
                 result = pawn.pawn_capture(chess_position_numerical, pos_chess)
 
@@ -77,11 +84,26 @@ class is_valid_move():
 
                     print(str(pos_chess))
                     if str(pos_chess) == "a8" or str(pos_chess) == "b8" or str(pos_chess) == "c8" or str(pos_chess) == "d8" or str(pos_chess) == "e8" or str(pos_chess) == "f8" or str(pos_chess) == "g8" or str(pos_chess) == "h8":
-                        return "New_Piece"
+                        if move_turn(piece_that_moved, teams_turn) == "True":
+                            #if king_check.in_check() == "True":
+
+                            if teams_turn == "W":
+                                teams_turn = "B"
+                            else:
+                                teams_turn ="W"
+                                return "New_Piece"
                 else:
 
                     if str(pos_chess) == "a1" or str(pos_chess) == "b1" or str(pos_chess) == "c1" or str(pos_chess) == "d1" or str(pos_chess) == "e1" or str(pos_chess) == "f1" or str(pos_chess) == "g1" or str(pos_chess) == "h1":
-                        return "New_piece"
+                        if move_turn(piece_that_moved, teams_turn) == "True":
+                            #if king_check.in_check() == "True":
+
+                            if teams_turn == "W":
+                                teams_turn = "B"
+                            else:
+                                teams_turn ="W"
+                            return "New_piece"
+
                 result = pawn.pawn(chess_position_numerical, pos_chess)
 
 
