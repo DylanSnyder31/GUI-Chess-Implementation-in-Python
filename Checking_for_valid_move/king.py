@@ -38,6 +38,7 @@ def King(position_piece, pos_chess):
 
     #Step 3: Checking for a Castle
     elif int(dictionar_of_letters_to_numbers[str(position_piece)[0]]) + 2 == int(dictionar_of_letters_to_numbers[str(pos_chess)[0]]) or int(dictionar_of_letters_to_numbers[str(position_piece)[0]]) - 2 == int(dictionar_of_letters_to_numbers[str(pos_chess)[0]]):
+
             #If the piece is a white king
             if str(position_piece) == 'e1':
                 #Checking to see what direction (Right)
@@ -54,13 +55,13 @@ def King(position_piece, pos_chess):
 
             #If the piece is a black King
             elif str(position_piece) == 'e8':
+
                 if str(pos_chess) == 'g8':
-                    if str(pos_chess) == 'g8':
-                        if position_dic['h8'] == "Right Black Rook":
-                            if position_dic['f8'] == "None":
+                    if position_dic['h8'] == "Right Black Rook":
+                        if position_dic['f8'] == "None":
+                            return "Castle"
+                else:
+                    if position_dic['a8'] == "Left Black Rook":
+                        if position_dic['d8'] == "None":
+                            if position_dic['b8'] == "None":
                                 return "Castle"
-                    else:
-                        if position_dic['a8'] == "Left Black Rook":
-                            if position_dic['d8'] == "None":
-                                if position_dic['b8'] == "None":
-                                    return "Castle"

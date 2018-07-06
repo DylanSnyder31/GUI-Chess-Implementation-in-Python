@@ -55,6 +55,7 @@ class end_game():
             self.check_for_pawns = "Up"
         else:
             king_ID = "Black King"
+	
             #What way the pawns are deadly to the king
             self.check_for_pawns = "Down"
 
@@ -118,7 +119,7 @@ class end_game():
 
                             return "False"
 
-                            
+
         if self.numeric_value_positive != '9':
             '''
             CHECK to thE RIGHt

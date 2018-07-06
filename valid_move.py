@@ -63,27 +63,26 @@ class is_valid_move():
                 #This means the piece MUST be a pawn
                 #THe pawn is isolated from the other pieces because it has different moving rules based on if it is capturing a piece or not
 
-                if str(position_dic[str(chess_position_numerical)])[0] == 'W':
-                    #Since the piece is white, it checks to see if it has 'landed' onto the top row, Where it can be promoted
-                    if str(pos_chess) == "a8" or str(pos_chess) == "b8" or str(pos_chess) == "c8" or str(pos_chess) == "d8" or str(pos_chess) == "e8" or str(pos_chess) == "f8" or str(pos_chess) == "g8" or str(pos_chess) == "h8":
-                        #If so, chnage the team that has active play
-                        teams_turn = "B"
-
-                        #Return that the move was valid
-                        return "New_Piece"
-                else:
-                    #Since the piece is black it checks the bottom
-                    if str(pos_chess) == "a1" or str(pos_chess) == "b1" or str(pos_chess) == "c1" or str(pos_chess) == "d1" or str(pos_chess) == "e1" or str(pos_chess) == "f1" or str(pos_chess) == "g1" or str(pos_chess) == "h1":
-                        if move_turn(piece_that_moved, teams_turn) == "True":
-
-                            #Changes the active play to White
-                            teams_turn ="W"
-
-                            #Returns that the move was valid
-                            return "New_Piece"
-
                 result = pawn.pawn_capture(chess_position_numerical, pos_chess)
+                if str(result) == "True":
+                    if str(position_dic[str(chess_position_numerical)])[0] == 'W':
+                        #Since the piece is white, it checks to see if it has 'landed' onto the top row, Where it can be promoted
+                        if str(pos_chess) == "a8" or str(pos_chess) == "b8" or str(pos_chess) == "c8" or str(pos_chess) == "d8" or str(pos_chess) == "e8" or str(pos_chess) == "f8" or str(pos_chess) == "g8" or str(pos_chess) == "h8":
+                            #If so, chnage the team that has active play
+                            teams_turn = "B"
 
+                            #Return that the move was valid
+                            return "New_Piece"
+                    elif str(position_dic[str(chess_position_numerical)])[0] == 'B':
+                        #Since the piece is black it checks the bottom
+                        if str(pos_chess) == "a1" or str(pos_chess) == "b1" or str(pos_chess) == "c1" or str(pos_chess) == "d1" or str(pos_chess) == "e1" or str(pos_chess) == "f1" or str(pos_chess) == "g1" or str(pos_chess) == "h1":
+                            if move_turn(piece_that_moved, teams_turn) == "True":
+
+                                #Changes the active play to White
+                                teams_turn ="W"
+
+                                #Returns that the move was valid
+                                return "New_Piece"
             if str(result) == "True":
                 if move_turn(piece_that_moved, teams_turn) == "True":
                     #If the move was valid, change the active play and return that the move was valid
@@ -97,30 +96,28 @@ class is_valid_move():
         elif is_square_occupied(chess_position_numerical, position_piece, pos_chess, piece_that_moved) == "True":
             if result == "":
                 #Same as above, the pawn has to go here
-                if str(position_dic[str(chess_position_numerical)])[0] == 'W':
-                    #Checks to see if the top row is the end location, since the piece was white
-                    if str(pos_chess) == "a8" or str(pos_chess) == "b8" or str(pos_chess) == "c8" or str(pos_chess) == "d8" or str(pos_chess) == "e8" or str(pos_chess) == "f8" or str(pos_chess) == "g8" or str(pos_chess) == "h8":
-                        if move_turn(piece_that_moved, teams_turn) == "True":
-
-                            #Changes the play
-                            teams_turn = "B"
-
-                            #Returns that the move was Valid
-                            return "New_Piece"
-                else:
-                    #Since the piece is black, the algorithm checks the bottom row
-                    if str(pos_chess) == "a1" or str(pos_chess) == "b1" or str(pos_chess) == "c1" or str(pos_chess) == "d1" or str(pos_chess) == "e1" or str(pos_chess) == "f1" or str(pos_chess) == "g1" or str(pos_chess) == "h1":
-                        if move_turn(piece_that_moved, teams_turn) == "True":
-
-                            #Changes the team that can move
-                            teams_turn ="W"
-
-                            #Returns that the move was valid
-                            return "New_piece"
-
                 result = pawn.pawn(chess_position_numerical, pos_chess)
+                if str(result) == "True":
+                    if str(position_dic[str(chess_position_numerical)])[0] == 'W':
+                        #Checks to see if the top row is the end location, since the piece was white
+                        if str(pos_chess) == "a8" or str(pos_chess) == "b8" or str(pos_chess) == "c8" or str(pos_chess) == "d8" or str(pos_chess) == "e8" or str(pos_chess) == "f8" or str(pos_chess) == "g8" or str(pos_chess) == "h8":
+                            if move_turn(piece_that_moved, teams_turn) == "True":
 
+                                #Changes the play
+                                teams_turn = "B"
 
+                                #Returns that the move was Valid
+                                return "New_Piece"
+                    elif  str(position_dic[str(chess_position_numerical)])[0] == 'B':
+                        #Since the piece is black, the algorithm checks the bottom row
+                        if str(pos_chess) == "a1" or str(pos_chess) == "b1" or str(pos_chess) == "c1" or str(pos_chess) == "d1" or str(pos_chess) == "e1" or str(pos_chess) == "f1" or str(pos_chess) == "g1" or str(pos_chess) == "h1":
+                            if move_turn(piece_that_moved, teams_turn) == "True":
+
+                                #Changes the team that can move
+                                teams_turn ="W"
+
+                                #Returns that the move was valid
+                                return "New_piece"
             if str(result) == "True":
                 if move_turn(piece_that_moved, teams_turn) == "True":
                     #If the move was valid, change the play and return that it was valid

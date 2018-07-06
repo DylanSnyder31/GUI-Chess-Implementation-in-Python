@@ -1,1 +1,1 @@
-['e8', 'Whire Queen']
+['e8', 'Black King']
