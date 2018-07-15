@@ -25,7 +25,7 @@ $ sudo apt-get install python3-kivy
 
 Clone: 
 ```
-git clone https://github.com/DylanSnyder31/Machine-Learning-Chess.git
+git clone https://github.com/DylanSnyder31/GUI-Chess-Implementation-in-Python.git
 ```
 
 Run:
